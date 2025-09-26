@@ -141,77 +141,33 @@
       </div>
     </header>
 
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <p class="muted">A curated set of practical, job‑ready projects. Filter by area:</p>
-      <div class="filters" role="tablist">
-        <button class="filter active" data-filter="all">All</button>
-        <button class="filter" data-filter="dfir">DFIR</button>
-        <button class="filter" data-filter="th">Threat Hunting</button>
+<section id="projects">
+  <h2>Featured Projects</h2>
+  <p class="muted">A curated set of practical, job-ready projects.</p>
+  <div class="projects" id="projectGrid">
+
+    <article class="card project" data-tags="detections">
+      <span class="tag">SIEM / Detections</span>
+      <h3>Report on Testing Alerts in Splunk</h3>
+      <p>Practical analysis of Splunk alerts, validation of detection logic, and improvement of rule accuracy.</p>
+      <div class="meta">
+        <span>Splunk • Rule Tuning</span>
+        <a href="https://dimabass.github.io/incident-response/Report_on_Testing_Alerts_in_Splunk.html" target="_blank">Read</a>
       </div>
-      <div class="projects" id="projectGrid">
-        <!-- Project Card Template -->
-        <article class="card project" data-tags="dfir th">
-          <span class="tag">DFIR</span>
-          <h3>Undercover Shell — Memory Forensics Case Study</h3>
-          <p>Full investigation: triage dump, timeline analysis, malicious process tree, IOCs, and ATT&CK mapping. Tools: Volatility 3, KAPE, Sigma → Splunk.</p>
-          <div class="meta">
-            <span>Volatility • Sigma • ATT&CK</span>
-            <a href="#" id="p1">Read</a>
-          </div>
-        </article>
+    </article>
 
-        <article class="card project" data-tags="detections th">
-          <span class="tag">Detections</span>
-          <h3>SigmaPredator: Clearing Windows Event Logs (T1070.001)</h3>
-          <p>Adversary emulation + Sigma rule with Chainsaw testing and noise‑resistant logic. Includes coverage notes and false‑positive handling.</p>
-          <div class="meta">
-            <span>Sigma • Chainsaw</span>
-            <a href="#" id="p2">Details</a>
-          </div>
-        </article>
-
-        <article class="card project" data-tags="malware dfir">
-          <span class="tag">Malware</span>
-          <h3>FLARE VM Hardening for DFIR & Malware Analysis</h3>
-          <p>Baseline snapshot, toolset curation, network isolation, and triage checklist. Write‑up + repo with scripts.</p>
-          <div class="meta">
-            <span>FLARE VM • ProcMon</span>
-            <a href="#" id="p3">Repo</a>
-          </div>
-        </article>
-
-        <article class="card project" data-tags="th detections">
-          <span class="tag">Threat Hunting</span>
-          <h3>WMI Lateral Movement Hunt</h3>
-          <p>Built a hunt package for suspicious WMI execution using Sysmon + Windows Logs with enrichment in Splunk/Sentinel.</p>
-          <div class="meta">
-            <span>WMI • Sysmon • Splunk</span>
-            <a href="#" id="p4">Playbook</a>
-          </div>
-        </article>
-
-        <article class="card project" data-tags="dfir">
-          <span class="tag">DFIR</span>
-          <h3>Windows Server 2022 Attack Simulation</h3>
-          <p>End‑to‑end lab: password spray → AV/Firewall bypass → remote shell → persistence. Includes logs, IOCs, and response report.</p>
-          <div class="meta">
-            <span>Impacket • ATT&CK</span>
-            <a href="#" id="p5">Case File</a>
-          </div>
-        </article>
-
-        <article class="card project" data-tags="detections">
-          <span class="tag">Detections</span>
-          <h3>Sysmon Config for Blue Team Home Lab</h3>
-          <p>Tuned configuration focused on credential access, lateral movement, and defense evasion. Includes unit tests with Chainsaw.</p>
-          <div class="meta">
-            <span>Sysmon • Chainsaw</span>
-            <a href="#" id="p6">Config</a>
-          </div>
-        </article>
+    <article class="card project" data-tags="ad th">
+      <span class="tag">Active Directory</span>
+      <h3>Advanced Attacks on Microsoft Active Directory</h3>
+      <p>Exploration of AD attack techniques and their detection in SIEM environments.</p>
+      <div class="meta">
+        <span>AD • Attack Simulation • Detection</span>
+        <a href="https://dimabass.github.io/incident-response/ad-attacks-ms-active-directory.html" target="_blank">Read</a>
       </div>
-    </section>
+    </article>
+
+  </div>
+</section>
 
     <section id="skills">
       <h2>Skills & Tools</h2>
