@@ -197,6 +197,40 @@
   transform: translateY(0); 
   opacity:1; 
 }
+    /* Project card: keep space for the top-left tag */
+.project {
+  position: relative;          /* ensure absolute children are positioned to this card */
+  padding-top: 36px;           /* reserve space so the tag doesn't overlap the title */
+  min-height: 160px;           /* optional: keeps cards from collapsing on small screens */
+}
+
+/* Tag pill: compact size and safe layer order */
+.project .tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  font-size: 12px;             /* smaller so it doesn't clash with the title */
+  line-height: 1;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+/* Title spacing tweaks */
+.project h3 {
+  margin-top: 0;               /* avoid extra gap—padding-top now handles spacing */
+  margin-bottom: 6px;
+  word-wrap: break-word;       /* prevent long words from pushing the tag */
+}
+
+/* Make the 'Read/Details' link stay neat on wrap */
+.project .meta {
+  align-items: center;
+  gap: 8px;
+}
+.project .meta a {
+  white-space: nowrap;         /* keep 'Read' from breaking into two lines */
+}
   </style>
 </head>
 <body>
