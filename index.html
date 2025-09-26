@@ -142,6 +142,61 @@
   background: #fff;       /* optional: white background behind image */
   border-radius: 8px;     /* smooth rounded corners */
 }
+
+    /* Wrapper for Credly iframe with overlay effect */
+.credly-wrap { 
+  position: relative; 
+}
+
+.credly-wrap iframe { 
+  transition: .2s ease; 
+  border-radius: var(--radius); 
+}
+
+/* Darken iframe on hover */
+.credly-wrap:hover iframe { 
+  filter: brightness(.6); 
+}
+
+/* Semi-transparent dark overlay on hover */
+.credly-wrap::after {                                        
+  content:""; 
+  position:absolute; 
+  inset:0; 
+  border-radius:var(--radius);
+  background: linear-gradient(to top, rgba(0,0,0,.45), transparent 55%);
+  opacity:0; 
+  transition:.2s ease; 
+  pointer-events:none;
+}
+
+.credly-wrap:hover::after { 
+  opacity:1; 
+}
+
+/* Verify button */
+.overlay-verify {
+  position:absolute; 
+  left:12px; 
+  bottom:12px; 
+  z-index:2;
+  padding:8px 10px; 
+  border-radius:10px; 
+  text-decoration:none;
+  background:var(--brand); 
+  color:#06251f; 
+  font-weight:600;
+  box-shadow:0 6px 16px rgba(0,184,148,.35);
+  transform: translateY(6px); 
+  opacity:0; 
+  transition:.2s ease;
+}
+
+/* Show button on hover */
+.credly-wrap:hover .overlay-verify { 
+  transform: translateY(0); 
+  opacity:1; 
+}
   </style>
 </head>
 <body>
@@ -246,46 +301,88 @@
       </div>
     </section>
 
-    <h2>Certifications</h2>
+<h2>Certifications</h2>
 
-<div class="certs" style="display:grid;grid-template-columns:repeat( auto-fit, minmax(200px,1fr) );gap:12px">
+<div class="certs" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
 
-  <div class="cert card">
-    <div data-iframe-width="200" data-iframe-height="260" data-share-badge-id="719c6c22-51ef-486c-9c93-9cf7df3ccce4" data-share-badge-host="https://www.credly.com"></div>
+  <!-- BTL1 -->
+  <div class="cert card credly-wrap">
+    <div data-iframe-width="200" data-iframe-height="260"
+         data-share-badge-id="719c6c22-51ef-486c-9c93-9cf7df3ccce4"
+         data-share-badge-host="https://www.credly.com"></div>
+    <a class="overlay-verify"
+       href="https://www.credly.com/badges/719c6c22-51ef-486c-9c93-9cf7df3ccce4/public_url"
+       target="_blank" rel="noreferrer">Verify</a>
   </div>
 
-  <div class="cert card">
-    <div data-iframe-width="200" data-iframe-height="260" data-share-badge-id="fbb8dbe2-8f81-4cf4-829c-a59680c8c236" data-share-badge-host="https://www.credly.com"></div>
+  <!-- PT1 -->
+  <div class="cert card credly-wrap">
+    <div data-iframe-width="200" data-iframe-height="260"
+         data-share-badge-id="fbb8dbe2-8f81-4cf4-829c-a59680c8c236"
+         data-share-badge-host="https://www.credly.com"></div>
+    <a class="overlay-verify"
+       href="https://www.credly.com/badges/fbb8dbe2-8f81-4cf4-829c-a59680c8c236/public_url"
+       target="_blank" rel="noreferrer">Verify</a>
   </div>
 
-  <div class="cert card">
-    <div data-iframe-width="200" data-iframe-height="260" data-share-badge-id="7b91c85e-cf9d-4421-bbf8-0b998565b3bc" data-share-badge-host="https://www.credly.com"></div>
+  <!-- CompTIA Security+ -->
+  <div class="cert card credly-wrap">
+    <div data-iframe-width="200" data-iframe-height="260"
+         data-share-badge-id="7b91c85e-cf9d-4421-bbf8-0b998565b3bc"
+         data-share-badge-host="https://www.credly.com"></div>
+    <a class="overlay-verify"
+       href="https://www.credly.com/badges/7b91c85e-cf9d-4421-bbf8-0b998565b3bc/public_url"
+       target="_blank" rel="noreferrer">Verify</a>
   </div>
 
-  <div class="cert card">
-    <div data-iframe-width="200" data-iframe-height="260" data-share-badge-id="76ca3f73-eb8c-40a9-9025-9916d3920cd6" data-share-badge-host="https://www.credly.com"></div>
+  <!-- CompTIA PenTest+ -->
+  <div class="cert card credly-wrap">
+    <div data-iframe-width="200" data-iframe-height="260"
+         data-share-badge-id="76ca3f73-eb8c-40a9-9025-9916d3920cd6"
+         data-share-badge-host="https://www.credly.com"></div>
+    <a class="overlay-verify"
+       href="https://www.credly.com/badges/76ca3f73-eb8c-40a9-9025-9916d3920cd6/public_url"
+       target="_blank" rel="noreferrer">Verify</a>
   </div>
 
-  <div class="cert card">
-    <div data-iframe-width="200" data-iframe-height="260" data-share-badge-id="5d62a978-63ce-4cf8-bc53-25c6dcb06ed3" data-share-badge-host="https://www.credly.com"></div>
+  <!-- Splunk Core Certified User -->
+  <div class="cert card credly-wrap">
+    <div data-iframe-width="200" data-iframe-height="260"
+         data-share-badge-id="5d62a978-63ce-4cf8-bc53-25c6dcb06ed3"
+         data-share-badge-host="https://www.credly.com"></div>
+    <a class="overlay-verify"
+       href="https://www.credly.com/badges/5d62a978-63ce-4cf8-bc53-25c6dcb06ed3/public_url"
+       target="_blank" rel="noreferrer">Verify</a>
   </div>
 
-  <div class="cert card">
-    <div data-iframe-width="200" data-iframe-height="260" data-share-badge-id="ba914338-a2eb-47fd-8bfb-9162a8d6b0a5" data-share-badge-host="https://www.credly.com"></div>
+  <!-- Fortinet FCP -->
+  <div class="cert card credly-wrap">
+    <div data-iframe-width="200" data-iframe-height="260"
+         data-share-badge-id="ba914338-a2eb-47fd-8bfb-9162a8d6b0a5"
+         data-share-badge-host="https://www.credly.com"></div>
+    <a class="overlay-verify"
+       href="https://www.credly.com/badges/ba914338-a2eb-47fd-8bfb-9162a8d6b0a5/public_url"
+       target="_blank" rel="noreferrer">Verify</a>
   </div>
 
-  <div class="cert card">
-    <div data-iframe-width="200" data-iframe-height="260" data-share-badge-id="ff1cd510-d7e2-4cd6-92c4-40594e476920" data-share-badge-host="https://www.credly.com"></div>
+  <!-- CompTIA CNVP -->
+  <div class="cert card credly-wrap">
+    <div data-iframe-width="200" data-iframe-height="260"
+         data-share-badge-id="ff1cd510-d7e2-4cd6-92c4-40594e476920"
+         data-share-badge-host="https://www.credly.com"></div>
+    <a class="overlay-verify"
+       href="https://www.credly.com/badges/ff1cd510-d7e2-4cd6-92c4-40594e476920/public_url"
+       target="_blank" rel="noreferrer">Verify</a>
   </div>
 
-    <a class="cert card thumb"
-   href="https://perscert-tuv.certif-id.com/certificate-view/201772ae838022a2ef175957b65145cdbef7149f8b0b5abb43d6e86f4ecb8050"
-   target="_blank" rel="noreferrer">
-  <img src="assets/certs/tuv.png" alt="TÜV Information Security Officer">
-  <span class="overlay"></span>
-  <span class="cta">Verify</span>
-</a>
-
+  <!-- TÜV Information Security Officer -->
+  <a class="cert card thumb"
+     href="https://perscert-tuv.certif-id.com/certificate-view/201772ae838022a2ef175957b65145cdbef7149f8b0b5abb43d6e86f4ecb8050"
+     target="_blank" rel="noreferrer">
+    <img src="assets/certs/tuv.png" alt="TÜV Information Security Officer">
+    <span class="overlay"></span>
+    <span class="cta">Verify</span>
+  </a>
 
 </div>
 
