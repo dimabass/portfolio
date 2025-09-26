@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dmytro Chmyr — Cybersecurity Portfolio</title>
+  <meta name="description" content="Cybersecurity portfolio for Dmytro Chmyr: Blue Team, DFIR, Threat Hunting, Malware Analysis, Projects, Write‑ups, and Certifications." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%2300b894' d='M32 2l26 15v30L32 62 6 47V17z'/%3E%3Cpath fill='%23fff' d='M32 12l16 9v22l-16 9-16-9V21z'/%3E%3Cpath fill='%2300b894' d='M26 26h12v12H26z'/%3E%3C/svg%3E" />
+  <style>
+    :root {
+      --bg: #0b0f14;        /* dark background */
+      --panel: #0f1621;     /* card background */
+      --text: #e8eef6;      /* primary text */
+      --muted: #a6b3c2;     /* secondary text */
+      --brand: #00b894;     /* accent */
+      --brand-2: #4dd0e1;   /* subtle accent */
+      --ring: rgba(77, 208, 225, 0.25);
+      --ok: #22c55e; --warn: #f59e0b; --bad: #ef4444;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#f5f7fb; --panel:#ffffff; --text:#0f1621; --muted:#465164; --ring: rgba(0,184,148,.18); }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:radial-gradient(1200px 600px at 10% -10%, rgba(77,208,225,.12), transparent 60%),radial-gradient(1000px 600px at 110% 10%, rgba(0,184,148,.12), transparent 60%), var(--bg);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"}
+    a{color:inherit}
+    .wrap{max-width:1080px;margin:0 auto;padding:28px}
+
+    /* header */
+    .nav{display:flex;gap:16px;justify-content:space-between;align-items:center;margin-bottom:24px}
+    .nav .links{display:flex;gap:14px;flex-wrap:wrap}
+    .nav a{padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--muted)}
+    .nav a:hover{background:rgba(77,208,225,.12);color:var(--text)}
+    .toggle{appearance:none;border:1px solid rgba(255,255,255,.15);background:transparent;color:var(--muted);padding:8px 12px;border-radius:10px;cursor:pointer}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin:24px 0 40px}
+    .hero .card{background:linear-gradient(160deg, rgba(77,208,225,.08), rgba(0,0,0,0));border:1px solid rgba(255,255,255,.08);padding:26px;border-radius:var(--radius);box-shadow:var(--shadow)}
+    .title{font-size:clamp(28px,5vw,40px);line-height:1.2;margin:0 0 10px}
+    .subtitle{color:var(--muted);margin:0 0 18px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 18px}
+    .chip{background:rgba(0,184,148,.12);color:#a7fff0;border:1px solid rgba(0,184,148,.25);padding:6px 10px;border-radius:999px;font-size:14px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:var(--brand);color:#06251f;border:0;padding:10px 14px;border-radius:12px;text-decoration:none;font-weight:600;box-shadow:0 6px 16px rgba(0,184,148,.35)}
+    .btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.15)}
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .stat{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:16px;text-align:center}
+    .stat .k{font-size:26px;font-weight:700}
+
+    /* section */
+    section{margin:44px 0}
+    h2{font-size:22px;margin:0 0 16px}
+    .muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+
+    /* cards */
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{margin:6px 0 0}
+
+    /* skills */
+    .skills{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .badge{display:flex;align-items:center;gap:10px;padding:10px;border-radius:12px;border:1px dashed rgba(255,255,255,.14)}
+    .badge svg{width:18px;height:18px}
+
+    /* projects */
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+    .filter{padding:8px 12px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:transparent;color:var(--muted);cursor:pointer}
+    .filter.active, .filter:hover{border-color:var(--brand);color:var(--text);box-shadow:0 0 0 4px var(--ring)}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project{position:relative;overflow:hidden}
+    .tag{position:absolute;top:10px;left:10px;background:rgba(77,208,225,.2);border:1px solid rgba(77,208,225,.35);color:#c7f9ff;padding:4px 8px;border-radius:999px;font-size:12px}
+    .meta{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px;margin-top:8px}
+    .meta a{color:var(--brand-2);text-decoration:none}
+
+    /* timeline */
+    .timeline{border-left:2px dashed rgba(255,255,255,.18);padding-left:16px}
+    .tl-item{margin:12px 0}
+    .tl-item .when{font-size:12px;color:var(--muted)}
+
+    /* certs */
+    .certs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .cert{padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.12)}
+
+    /* footer */
+    footer{margin:40px 0 20px;color:var(--muted);font-size:14px}
+
+    /* responsive */
+    @media (max-width:1024px){
+      .hero{grid-template-columns:1fr}
+      .projects{grid-template-columns:repeat(2,1fr)}
+      .skills{grid-template-columns:repeat(3,1fr)}
+      .certs{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (max-width:680px){
+      .projects{grid-template-columns:1fr}
+      .skills{grid-template-columns:repeat(2,1fr)}
+      .certs{grid-template-columns:repeat(2,1fr)}
+      .stats{grid-template-columns:1fr 1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div style="display:flex;align-items:center;gap:10px">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z" fill="var(--brand)"/><path d="M8 9h8v6H8z" fill="#0f1621"/></svg>
+        <strong>Dmytro Chmyr</strong>
+      </div>
+      <div class="links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#timeline">Experience</a>
+        <a href="#certs">Certs</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="toggle" id="themeToggle" aria-label="Toggle theme">☾</button>
+    </nav>
+
+    <header class="hero">
+      <div class="card">
+        <h1 class="title">Blue Team / DFIR / Threat Hunting</h1>
+        <p class="subtitle">Cybersecurity analyst focused on detection engineering, incident response, and memory forensics. I build practical labs, write clear reports, and ship detections that work.</p>
+        <div class="chips">
+          <span class="chip">Windows Telemetry & Sigma</span>
+          <span class="chip">Memory Forensics (Volatility)</span>
+          <span class="chip">SIEM: Splunk • MS Sentinel</span>
+          <span class="chip">Malware Analysis (FLARE VM)</span>
+        </div>
+        <div class="cta">
+          <a class="btn" href="#projects">See Projects</a>
+          <a class="btn ghost" href="https://dimabass.github.io/incident-response/" target="_blank" rel="noreferrer">Incident‑Response Blog →</a>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="k">20+ </div><div class="muted">Public write‑ups</div></div>
+        <div class="stat"><div class="k">8 </div><div class="muted">Hands‑on labs</div></div>
+        <div class="stat"><div class="k">5 </div><div class="muted">Detections shipped</div></div>
+      </div>
+    </header>
+
+    <section id="projects">
+      <h2>Featured Projects</h2>
+      <p class="muted">A curated set of practical, job‑ready projects. Filter by area:</p>
+      <div class="filters" role="tablist">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="dfir">DFIR</button>
+        <button class="filter" data-filter="detections">Detections</button>
+        <button class="filter" data-filter="malware">Malware</button>
+        <button class="filter" data-filter="th">Threat Hunting</button>
+      </div>
+      <div class="projects" id="projectGrid">
+        <!-- Project Card Template -->
+        <article class="card project" data-tags="dfir th">
+          <span class="tag">DFIR</span>
+          <h3>Undercover Shell — Memory Forensics Case Study</h3>
+          <p>Full investigation: triage dump, timeline analysis, malicious process tree, IOCs, and ATT&CK mapping. Tools: Volatility 3, KAPE, Sigma → Splunk.</p>
+          <div class="meta">
+            <span>Volatility • Sigma • ATT&CK</span>
+            <a href="#" id="p1">Read</a>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="detections th">
+          <span class="tag">Detections</span>
+          <h3>SigmaPredator: Clearing Windows Event Logs (T1070.001)</h3>
+          <p>Adversary emulation + Sigma rule with Chainsaw testing and noise‑resistant logic. Includes coverage notes and false‑positive handling.</p>
+          <div class="meta">
+            <span>Sigma • Chainsaw</span>
+            <a href="#" id="p2">Details</a>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="malware dfir">
+          <span class="tag">Malware</span>
+          <h3>FLARE VM Hardening for DFIR & Malware Analysis</h3>
+          <p>Baseline snapshot, toolset curation, network isolation, and triage checklist. Write‑up + repo with scripts.</p>
+          <div class="meta">
+            <span>FLARE VM • ProcMon</span>
+            <a href="#" id="p3">Repo</a>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="th detections">
+          <span class="tag">Threat Hunting</span>
+          <h3>WMI Lateral Movement Hunt</h3>
+          <p>Built a hunt package for suspicious WMI execution using Sysmon + Windows Logs with enrichment in Splunk/Sentinel.</p>
+          <div class="meta">
+            <span>WMI • Sysmon • Splunk</span>
+            <a href="#" id="p4">Playbook</a>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="dfir">
+          <span class="tag">DFIR</span>
+          <h3>Windows Server 2022 Attack Simulation</h3>
+          <p>End‑to‑end lab: password spray → AV/Firewall bypass → remote shell → persistence. Includes logs, IOCs, and response report.</p>
+          <div class="meta">
+            <span>Impacket • ATT&CK</span>
+            <a href="#" id="p5">Case File</a>
+          </div>
+        </article>
+
+        <article class="card project" data-tags="detections">
+          <span class="tag">Detections</span>
+          <h3>Sysmon Config for Blue Team Home Lab</h3>
+          <p>Tuned configuration focused on credential access, lateral movement, and defense evasion. Includes unit tests with Chainsaw.</p>
+          <div class="meta">
+            <span>Sysmon • Chainsaw</span>
+            <a href="#" id="p6">Config</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills & Tools</h2>
+      <div class="skills">
+        <div class="badge">🔎 Threat Hunting</div>
+        <div class="badge">🧠 DFIR & Memory</div>
+        <div class="badge">📈 SIEM (Splunk, Sentinel)</div>
+        <div class="badge">🧩 Detection Engineering (Sigma)</div>
+        <div class="badge">🖥️ Sysmon & Windows Logs</div>
+        <div class="badge">🧪 Adversary Emulation</div>
+        <div class="badge">🔐 Network Basics (Fortinet)</div>
+        <div class="badge">🧰 KAPE • Velociraptor • Chainsaw</div>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="when">Nov 2025 → present</div>
+          <strong>SOC Analyst (Tier 1), CANCOM — Remote (DE)</strong>
+          <div class="muted">Triage, alert enrichment, initial containment, and escalations. Collaboration with Tier 2 on hunts & detections.</div>
+        </div>
+        <div class="tl-item">
+          <div class="when">2024 → 2025</div>
+          <strong>Security Blue Team — BTL1</strong>
+          <div class="muted">Hands‑on certification and labs: detections, IR reporting, log analysis.</div>
+        </div>
+        <div class="tl-item">
+          <div class="when">2024</div>
+          <strong>EuroTech Study — Cybersecurity Training</strong>
+          <div class="muted">Practical modules in SOC workflows, SIEM, and Windows security.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certs">
+      <h2>Certifications</h2>
+      <div class="certs">
+        <div class="cert card"><strong>BTL1</strong><div class="muted">Security Blue Team</div></div>
+        <div class="cert card"><strong>PT1 (in progress)</strong><div class="muted">Junior Pentest practical</div></div>
+        <div class="cert card"><strong>FLARE VM Track</strong><div class="muted">Malware Analysis</div></div>
+        <div class="cert card"><strong>Fortinet (training)</strong><div class="muted">Firewalls basics</div></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid">
+        <div class="card" style="grid-column: span 8">
+          <h3>Let’s collaborate</h3>
+          <p>Based in Germany, open to EU remote/on‑site. I love building clear, reproducible labs and writing reports that help teams respond faster.</p>
+          <p class="muted">Email: <a href="mailto:youremail@example.com">youremail@example.com</a> • LinkedIn: <a href="#">/in/yourhandle</a> • GitHub: <a href="https://github.com/dimabass" target="_blank" rel="noreferrer">@dimabass</a></p>
+        </div>
+        <div class="card" style="grid-column: span 4">
+          <h3>Download</h3>
+          <p class="muted">CV / Resume (PDF) and a one‑page portfolio snapshot.</p>
+          <p><a class="btn" href="#">Resume.pdf</a> <a class="btn ghost" href="#">One‑Pager</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Dmytro Chmyr — Built with vanilla HTML/CSS on GitHub Pages.
+    </footer>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // theme
+    const btn = document.getElementById('themeToggle');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    const applyTheme = (t)=>document.documentElement.dataset.theme=t;
+    const saved = localStorage.getItem('theme');
+    if(saved){applyTheme(saved)}
+    btn.addEventListener('click',()=>{
+      const next = (document.documentElement.dataset.theme === 'light') ? 'dark' : 'light';
+      applyTheme(next); localStorage.setItem('theme', next);
+    });
+    // reflect theme
+    const observer = new MutationObserver(()=>{
+      if(document.documentElement.dataset.theme==='light'){
+        document.documentElement.style.setProperty('--bg','#f5f7fb');
+        document.documentElement.style.setProperty('--panel','#ffffff');
+        document.documentElement.style.setProperty('--text','#0f1621');
+        document.documentElement.style.setProperty('--muted','#465164');
+        document.documentElement.style.setProperty('--ring','rgba(0,184,148,.18)');
+      } else {
+        document.documentElement.style.removeProperty('--bg');
+        document.documentElement.style.removeProperty('--panel');
+        document.documentElement.style.removeProperty('--text');
+        document.documentElement.style.removeProperty('--muted');
+        document.documentElement.style.removeProperty('--ring');
+      }
+    });
+    observer.observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+    // filters
+    const grid = document.getElementById('projectGrid');
+    const buttons = document.querySelectorAll('.filter');
+    buttons.forEach(b=>b.addEventListener('click',()=>{
+      buttons.forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      const f = b.dataset.filter;
+      grid.querySelectorAll('.project').forEach(card=>{
+        const tags = card.dataset.tags.split(' ');
+        const show = f==='all' || tags.includes(f);
+        card.style.display = show ? '' : 'none';
+      });
+    }));
+
+    // replace project links with your real URLs
+    const links = {
+      p1: 'https://dimabass.github.io/incident-response/',
+      p2: 'https://dimabass.github.io/incident-response/',
+      p3: 'https://github.com/dimabass',
+      p4: 'https://dimabass.github.io/incident-response/',
+      p5: 'https://dimabass.github.io/incident-response/',
+      p6: 'https://github.com/dimabass'
+    };
+    Object.entries(links).forEach(([id,url])=>{ const a=document.getElementById(id); if(a) a.href=url;});
+  </script>
+</body>
+</html>
