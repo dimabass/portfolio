@@ -100,6 +100,8 @@
       .certs{grid-template-columns:repeat(2,1fr)}
       .stats{grid-template-columns:1fr 1fr}
     }
+    
+    /* Custom style for preview-card cert (example TUV) */
     .thumb {
   position: relative;
   display: block;
@@ -132,6 +134,14 @@
 }
 .thumb:hover .overlay { opacity: 1; }
 .thumb:hover .cta { transform: translateY(0); opacity:1; }
+
+    .certs .thumb img {
+  object-fit: contain;    /* keep full image inside box without cropping */
+  width: 100%;            /* stretch horizontally */
+  height: 100%;           /* stretch vertically */
+  background: #fff;       /* optional: white background behind image */
+  border-radius: 8px;     /* smooth rounded corners */
+}
   </style>
 </head>
 <body>
