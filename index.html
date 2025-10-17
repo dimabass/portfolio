@@ -208,6 +208,25 @@
   border: 1px solid rgba(77, 208, 225, 0.45);
   color: #e9fbff;
 }
+
+    /* Profile icons: use local SVG/PNG logos */
+.profile .icon{
+  width:40px; height:40px;
+  border-radius:10px;
+  display:grid; place-items:center;
+  background:rgba(77,208,225,.10);
+  border:1px solid rgba(77,208,225,.18);
+  overflow:hidden;
+}
+.profile .icon img{
+  width:70%; height:70%;
+  object-fit:contain;
+  display:block;
+}
+@media (max-width:560px){
+  .profile .icon{ width:36px; height:36px; }
+}
+
   </style>
 </head>
 <body>
@@ -237,48 +256,63 @@
         </div>
       </div>
 
-      <div class="grid">
-        <div class="profile">
-          <div class="meta">
-            <div class="icon">🏴‍☠️</div>
-            <div>
-              <strong>TryHackMe</strong>
-              <div class="muted">Labs & Rooms</div>
-            </div>
-          </div>
-          <a class="btn" href="https://tryhackme.com/p/" target="_blank" rel="noreferrer">Profile</a>
-        </div>
-        <div class="profile">
-          <div class="meta">
-            <div class="icon">🧪</div>
-            <div>
-              <strong>Blue Team Labs Online</strong>
-              <div class="muted">Blue-team challenges</div>
-            </div>
-          </div>
-          <a class="btn" href="https://blueteamlabs.online/" target="_blank" rel="noreferrer">Profile</a>
-        </div>
-        <div class="profile">
-          <div class="meta">
-            <div class="icon">🛡️</div>
-            <div>
-              <strong>CyberDefenders</strong>
-              <div class="muted">DFIR & hunting labs</div>
-            </div>
-          </div>
-          <a class="btn" href="https://cyberdefenders.org/" target="_blank" rel="noreferrer">Profile</a>
-        </div>
-        <div class="profile">
-          <div class="meta">
-            <div class="icon">📟</div>
-            <div>
-              <strong>LetsDefend</strong>
-              <div class="muted">SOC simulations</div>
-            </div>
-          </div>
-          <a class="btn" href="https://app.letsdefend.io/" target="_blank" rel="noreferrer">Profile</a>
-        </div>
+<div class="grid">
+  <!-- TryHackMe -->
+  <div class="profile">
+    <div class="meta">
+      <div class="icon">
+        <img src="assets/logos/tryhackme.svg" alt="TryHackMe logo" loading="lazy">
       </div>
+      <div>
+        <strong>TryHackMe</strong>
+        <div class="muted">Labs & Rooms</div>
+      </div>
+    </div>
+    <a class="btn" href="https://tryhackme.com/p/" target="_blank" rel="noreferrer">Profile</a>
+  </div>
+
+  <!-- Blue Team Labs Online -->
+  <div class="profile">
+    <div class="meta">
+      <div class="icon">
+        <img src="assets/logos/btlo.png" alt="Blue Team Labs Online logo" loading="lazy">
+      </div>
+      <div>
+        <strong>Blue Team Labs Online</strong>
+        <div class="muted">Blue-team challenges</div>
+      </div>
+    </div>
+    <a class="btn" href="https://blueteamlabs.online/" target="_blank" rel="noreferrer">Profile</a>
+  </div>
+
+  <!-- CyberDefenders -->
+  <div class="profile">
+    <div class="meta">
+      <div class="icon">
+        <img src="assets/logos/cd.png" alt="CyberDefenders logo" loading="lazy">
+      </div>
+      <div>
+        <strong>CyberDefenders</strong>
+        <div class="muted">DFIR & hunting labs</div>
+      </div>
+    </div>
+    <a class="btn" href="https://cyberdefenders.org/" target="_blank" rel="noreferrer">Profile</a>
+  </div>
+
+  <!-- LetsDefend -->
+  <div class="profile">
+    <div class="meta">
+      <div class="icon">
+        <img src="assets/logos/ld.svg" alt="LetsDefend logo" loading="lazy">
+      </div>
+      <div>
+        <strong>LetsDefend</strong>
+        <div class="muted">SOC simulations</div>
+      </div>
+    </div>
+    <a class="btn" href="https://app.letsdefend.io/" target="_blank" rel="noreferrer">Profile</a>
+  </div>
+</div>
     </section>
 
     <section id="projects">
