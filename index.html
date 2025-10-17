@@ -184,6 +184,30 @@
   object-fit: contain;
   display: block;
 }
+
+    /* Custom meta below each cert (outside the iframe) */
+.cert-meta {
+  margin-top: 10px;
+}
+.cert-title {
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--text);          /* brighter than the iframe text */
+  line-height: 1.3;
+}
+.cert-issuer {
+  font-size: 13px;
+  color: #cfe7f3;              /* higher-contrast secondary */
+  opacity: .95;
+}
+
+/* Optional: brighten the Verify chip a bit */
+.overlay-verify,
+.thumb .cta {
+  background: rgba(77, 208, 225, 0.22);
+  border: 1px solid rgba(77, 208, 225, 0.45);
+  color: #e9fbff;
+}
   </style>
 </head>
 <body>
@@ -314,99 +338,145 @@
   <h2>Certifications</h2>
 
   <div class="certs">
-    <!-- Blue Team Level 1 (BTL1) -->
-    <div class="cert card credly-wrap">
-      <div
-        data-iframe-width="100%"
-        data-iframe-height="100%"
-        data-share-badge-id="719c6c22-51ef-486c-9c93-9cf7df3ccce4"
-        data-share-badge-host="https://www.credly.com"></div>
-      <a class="overlay-verify"
-         href="https://www.credly.com/badges/719c6c22-51ef-486c-9c93-9cf7df3ccce4/public_url"
-         target="_blank" rel="noopener noreferrer">Verify</a>
-    </div>
+  <!-- BTL1 -->
+<div class="cert card credly-wrap">
+  <div
+    data-iframe-width="100%"
+    data-iframe-height="100%"
+    data-share-badge-id="719c6c22-51ef-486c-9c93-9cf7df3ccce4"
+    data-share-badge-host="https://www.credly.com"></div>
 
-    <!-- TryHackMe Jr Penetration Tester (PT1) -->
-    <div class="cert card credly-wrap">
-      <div
-        data-iframe-width="100%"
-        data-iframe-height="100%"
-        data-share-badge-id="fbb8dbe2-8f81-4cf4-829c-a59680c8c236"
-        data-share-badge-host="https://www.credly.com"></div>
-      <a class="overlay-verify"
-         href="https://www.credly.com/badges/fbb8dbe2-8f81-4cf4-829c-a59680c8c236/public_url"
-         target="_blank" rel="noopener noreferrer">Verify</a>
-    </div>
+  <a class="overlay-verify"
+     href="https://www.credly.com/badges/719c6c22-51ef-486c-9c93-9cf7df3ccce4/public_url"
+     target="_blank" rel="noopener noreferrer">Verify</a>
 
-    <!-- CompTIA Security+ -->
-    <div class="cert card credly-wrap">
-      <div
-        data-iframe-width="100%"
-        data-iframe-height="100%"
-        data-share-badge-id="7b91c85e-cf9d-4421-bbf8-0b998565b3bc"
-        data-share-badge-host="https://www.credly.com"></div>
-      <a class="overlay-verify"
-         href="https://www.credly.com/badges/7b91c85e-cf9d-4421-bbf8-0b998565b3bc/public_url"
-         target="_blank" rel="noopener noreferrer">Verify</a>
-    </div>
-
-    <!-- CompTIA PenTest+ -->
-    <div class="cert card credly-wrap">
-      <div
-        data-iframe-width="100%"
-        data-iframe-height="100%"
-        data-share-badge-id="76ca3f73-eb8c-40a9-9025-9916d3920cd6"
-        data-share-badge-host="https://www.credly.com"></div>
-      <a class="overlay-verify"
-         href="https://www.credly.com/badges/76ca3f73-eb8c-40a9-9025-9916d3920cd6/public_url"
-         target="_blank" rel="noopener noreferrer">Verify</a>
-    </div>
-
-    <!-- Splunk Core Certified User -->
-    <div class="cert card credly-wrap">
-      <div
-        data-iframe-width="100%"
-        data-iframe-height="100%"
-        data-share-badge-id="5d62a978-63ce-4cf8-bc53-25c6dcb06ed3"
-        data-share-badge-host="https://www.credly.com"></div>
-      <a class="overlay-verify"
-         href="https://www.credly.com/badges/5d62a978-63ce-4cf8-bc53-25c6dcb06ed3/public_url"
-         target="_blank" rel="noopener noreferrer">Verify</a>
-    </div>
-
-    <!-- Fortinet FortiGate Administrator (FCP/NSE4) -->
-    <div class="cert card credly-wrap">
-      <div
-        data-iframe-width="100%"
-        data-iframe-height="100%"
-        data-share-badge-id="ba914338-a2eb-47fd-8bfb-9162a8d6b0a5"
-        data-share-badge-host="https://www.credly.com"></div>
-      <a class="overlay-verify"
-         href="https://www.credly.com/badges/ba914338-a2eb-47fd-8bfb-9162a8d6b0a5/public_url"
-         target="_blank" rel="noopener noreferrer">Verify</a>
-    </div>
-
-    <!-- CompTIA CNVP -->
-    <div class="cert card credly-wrap">
-      <div
-        data-iframe-width="100%"
-        data-iframe-height="100%"
-        data-share-badge-id="ff1cd510-d7e2-4cd6-92c4-40594e476920"
-        data-share-badge-host="https://www.credly.com"></div>
-      <a class="overlay-verify"
-         href="https://www.credly.com/badges/ff1cd510-d7e2-4cd6-92c4-40594e476920/public_url"
-         target="_blank" rel="noopener noreferrer">Verify</a>
-    </div>
-
-    <!-- TÜV Rheinland – Information Security Officer -->
-    <a class="cert card thumb"
-       href="https://perscert-tuv.certif-id.com/certificate-view/201772ae838022a2ef175957b65145cdbef7149f8b0b5abb43d6e86f4ecb8050"
-       target="_blank" rel="noopener noreferrer">
-      <img src="assets/certs/tuv.png" alt="TÜV Information Security Officer" loading="lazy">
-      <span class="overlay"></span>
-      <span class="cta">Verify</span>
-    </a>
+  <div class="cert-meta">
+    <div class="cert-title">Blue Team Level 1 (BTL1)</div>
+    <div class="cert-issuer">Issuer: Security Blue Team</div>
   </div>
+</div>
+
+<!-- PT1 -->
+<div class="cert card credly-wrap">
+  <div
+    data-iframe-width="100%"
+    data-iframe-height="100%"
+    data-share-badge-id="fbb8dbe2-8f81-4cf4-829c-a59680c8c236"
+    data-share-badge-host="https://www.credly.com"></div>
+
+  <a class="overlay-verify"
+     href="https://www.credly.com/badges/fbb8dbe2-8f81-4cf4-829c-a59680c8c236/public_url"
+     target="_blank" rel="noopener noreferrer">Verify</a>
+
+  <div class="cert-meta">
+    <div class="cert-title">Jr Penetration Tester (PT1)</div>
+    <div class="cert-issuer">Issuer: TryHackMe</div>
+  </div>
+</div>
+
+<!-- Security+ -->
+<div class="cert card credly-wrap">
+  <div
+    data-iframe-width="100%"
+    data-iframe-height="100%"
+    data-share-badge-id="7b91c85e-cf9d-4421-bbf8-0b998565b3bc"
+    data-share-badge-host="https://www.credly.com"></div>
+
+  <a class="overlay-verify"
+     href="https://www.credly.com/badges/7b91c85e-cf9d-4421-bbf8-0b998565b3bc/public_url"
+     target="_blank" rel="noopener noreferrer">Verify</a>
+
+  <div class="cert-meta">
+    <div class="cert-title">CompTIA Security+</div>
+    <div class="cert-issuer">Issuer: CompTIA</div>
+  </div>
+</div>
+
+<!-- PenTest+ -->
+<div class="cert card credly-wrap">
+  <div
+    data-iframe-width="100%"
+    data-iframe-height="100%"
+    data-share-badge-id="76ca3f73-eb8c-40a9-9025-9916d3920cd6"
+    data-share-badge-host="https://www.credly.com"></div>
+
+  <a class="overlay-verify"
+     href="https://www.credly.com/badges/76ca3f73-eb8c-40a9-9025-9916d3920cd6/public_url"
+     target="_blank" rel="noopener noreferrer">Verify</a>
+
+  <div class="cert-meta">
+    <div class="cert-title">CompTIA PenTest+</div>
+    <div class="cert-issuer">Issuer: CompTIA</div>
+  </div>
+</div>
+
+<!-- Splunk Core Certified User -->
+<div class="cert card credly-wrap">
+  <div
+    data-iframe-width="100%"
+    data-iframe-height="100%"
+    data-share-badge-id="5d62a978-63ce-4cf8-bc53-25c6dcb06ed3"
+    data-share-badge-host="https://www.credly.com"></div>
+
+  <a class="overlay-verify"
+     href="https://www.credly.com/badges/5d62a978-63ce-4cf8-bc53-25c6dcb06ed3/public_url"
+     target="_blank" rel="noopener noreferrer">Verify</a>
+
+  <div class="cert-meta">
+    <div class="cert-title">Splunk Core Certified User</div>
+    <div class="cert-issuer">Issuer: Splunk</div>
+  </div>
+</div>
+
+<!-- Fortinet FortiGate Administrator (FCP/NSE4) -->
+<div class="cert card credly-wrap">
+  <div
+    data-iframe-width="100%"
+    data-iframe-height="100%"
+    data-share-badge-id="ba914338-a2eb-47fd-8bfb-9162a8d6b0a5"
+    data-share-badge-host="https://www.credly.com"></div>
+
+  <a class="overlay-verify"
+     href="https://www.credly.com/badges/ba914338-a2eb-47fd-8bfb-9162a8d6b0a5/public_url"
+     target="_blank" rel="noopener noreferrer">Verify</a>
+
+  <div class="cert-meta">
+    <div class="cert-title">Fortinet FortiGate 7.4 Administrator (FCP)</div>
+    <div class="cert-issuer">Issuer: Fortinet</div>
+  </div>
+</div>
+
+<!-- CompTIA CNVP -->
+<div class="cert card credly-wrap">
+  <div
+    data-iframe-width="100%"
+    data-iframe-height="100%"
+    data-share-badge-id="ff1cd510-d7e2-4cd6-92c4-40594e476920"
+    data-share-badge-host="https://www.credly.com"></div>
+
+  <a class="overlay-verify"
+     href="https://www.credly.com/badges/ff1cd510-d7e2-4cd6-92c4-40594e476920/public_url"
+     target="_blank" rel="noopener noreferrer">Verify</a>
+
+  <div class="cert-meta">
+    <div class="cert-title">CompTIA Network Vulnerability Professional (CNVP)</div>
+    <div class="cert-issuer">Issuer: CompTIA</div>
+  </div>
+</div>
+
+<!-- TÜV Rheinland – Information Security Officer -->
+<a class="cert card thumb"
+   href="https://perscert-tuv.certif-id.com/certificate-view/201772ae838022a2ef175957b65145cdbef7149f8b0b5abb43d6e86f4ecb8050"
+   target="_blank" rel="noopener noreferrer">
+  <img src="assets/certs/tuv.png" alt="TÜV Information Security Officer" loading="lazy">
+  <span class="overlay"></span>
+  <span class="cta">Verify</span>
+  <div class="cert-meta">
+    <div class="cert-title">Information Security Officer</div>
+    <div class="cert-issuer">Issuer: TÜV Rheinland</div>
+  </div>
+</a>
+
 
   <!-- Credly Embed Script -->
   <script async src="https://cdn.credly.com/assets/utilities/embed.js"></script>
