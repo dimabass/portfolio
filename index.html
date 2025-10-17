@@ -117,12 +117,20 @@
   box-shadow: var(--shadow);
 }
 
-/* === Wrapper for Credly and TÜV thumbnails === */
+/* Make Credly area a bit taller so long titles don't clip */
 .credly-wrap,
 .thumb {
-  aspect-ratio: 200 / 260; /* consistent height ratio */
+  aspect-ratio: 200 / 286; /* was 200/260 */
   display: grid;
   place-items: stretch;
+}
+
+/* On small screens give even more height for readability */
+@media (max-width: 560px) {
+  .credly-wrap,
+  .thumb {
+    aspect-ratio: 200 / 300;
+  }
 }
 
 /* === Embedded Credly badge === */
