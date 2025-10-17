@@ -332,6 +332,22 @@
   box-shadow: 0 6px 18px rgba(0,199,183,.12);
 }
 
+    /* mini cards for training platforms */
+.projects.platforms .project.platform h3{
+  font-size: 1.05rem;
+  line-height: 1.25;
+  margin: 6px 0 6px;
+}
+.projects.platforms .project.platform p{
+  font-size: .95rem;
+}
+.projects.platforms .project.platform .muted{
+  font-size: .85rem;
+}
+.projects.platforms .project.platform{
+  padding: 16px 16px;
+}
+
   </style>
 
   <link rel="canonical" href="https://dimabass.github.io/portfolio/">
@@ -376,67 +392,54 @@ I design detection use cases, investigate alerts end-to-end, perform root cause 
         </div>
       </div>
 
-<div class="grid">
-  <!-- TryHackMe -->
-  <div class="profile">
-    <div class="meta">
-      <div class="icon">
-        <img src="assets/logos/tryhackme.svg" alt="TryHackMe logo" loading="lazy">
-      </div>
-      <div>
-        <strong>TryHackMe</strong>
-        <div class="muted">Labs & Rooms</div>
-      </div>
-    </div>
-    <a class="btn" href="https://tryhackme.com/p/DCsec" target="_blank" rel="noopener noreferrer">Profile</a>
-  </div>
-
-  <!-- Blue Team Labs Online -->
-  <div class="profile">
-    <div class="meta">
-      <div class="icon">
-        <img src="assets/logos/btlo.png" alt="Blue Team Labs Online logo" loading="lazy">
-      </div>
-      <div>
-        <strong>Blue Team Labs Online</strong>
-        <div class="muted">Blue-team challenges</div>
-      </div>
-    </div>
-    <a class="btn" href="https://blueteamlabs.online/public/user/01cd9f3d5aea443b38f589" target="_blank" rel="noopener noreferrer">Profile</a>
-  </div>
-
-  <!-- CyberDefenders -->
-  <div class="profile">
-    <div class="meta">
-      <div class="icon">
-        <img src="assets/logos/cd.png" alt="CyberDefenders logo" loading="lazy">
-      </div>
-      <div>
-        <strong>CyberDefenders</strong>
-        <div class="muted">DFIR & hunting labs</div>
-      </div>
-    </div>
-    <a class="btn" href="https://cyberdefenders.org/p/DCsec" target="_blank" rel="noopener noreferrer">Profile</a>
-  </div>
-
-  <!-- LetsDefend -->
-  <div class="profile">
-    <div class="meta">
-      <div class="icon">
-        <img src="assets/logos/ld.svg" alt="LetsDefend logo" loading="lazy">
-      </div>
-      <div>
-        <strong>LetsDefend</strong>
-        <div class="muted">SOC simulations</div>
-      </div>
-    </div>
-    <a class="btn" href="https://app.letsdefend.io/user/dcsec" target="_blank" rel="noopener noreferrer">Profile</a>
-  </div>
-</div>
-    </section>
-
 <section id="projects">
   <h2>Featured Projects</h2>
+
+  <!-- Training & Simulation Platforms -->
+<div class="grid projects platforms">
+
+  <!-- TryHackMe -->
+  <article class="card project platform"
+           onclick="location.href='https://tryhackme.com/p/DCsec'">
+    <div class="meta"><span>Training Platform</span></div>
+    <h3>TryHackMe — Labs & Rooms</h3>
+    <p>Hands-on SOC/DFIR rooms: alert triage, IR playbooks, malware & phishing cases.</p>
+    <p class="muted">SOC • DFIR • Labs</p>
+    <span class="read">Open →</span>
+  </article>
+
+  <!-- Blue Team Labs Online -->
+  <article class="card project platform"
+           onclick="location.href='https://blueteamlabs.online/public/user/01cd9f3d5aea443b38f589'">
+    <div class="meta"><span>Blue-Team Challenges</span></div>
+    <h3>Blue Team Labs Online</h3>
+    <p>Detection & investigation challenges with evidence analysis and reporting.</p>
+    <p class="muted">Detections • IR • Reporting</p>
+    <span class="read">Open →</span>
+  </article>
+
+  <!-- CyberDefenders -->
+  <article class="card project platform"
+           onclick="location.href='https://cyberdefenders.org/p/DCsec'">
+    <div class="meta"><span>DFIR & Hunting</span></div>
+    <h3>CyberDefenders</h3>
+    <p>Forensics and threat-hunting scenarios mapped to MITRE ATT&CK.</p>
+    <p class="muted">DFIR • Hunt • ATT&CK</p>
+    <span class="read">Open →</span>
+  </article>
+
+  <!-- LetsDefend -->
+  <article class="card project platform"
+           onclick="location.href='https://app.letsdefend.io/user/dcsec'">
+    <div class="meta"><span>SOC Simulation</span></div>
+    <h3>LetsDefend — SOC Path</h3>
+    <p>End-to-end alert handling in a simulated SOC: triage, RCA, and clear IR reports.</p>
+    <p class="muted">Alert Triage • RCA • IR</p>
+    <span class="read">Open →</span>
+  </article>
+
+</div>
+  
   <div class="grid projects">
 
     <!-- Splunk Project -->
