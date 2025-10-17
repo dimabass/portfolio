@@ -98,6 +98,84 @@
     /* Accessibility */
     .focusable:focus{ outline:2px solid var(--brand); outline-offset:2px; border-radius:10px; }
     @media (prefers-reduced-motion: reduce){ *{ animation:none !important; transition:none !important; } }
+
+    /* === Certifications Grid === */
+.certs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* === Certification Card Base === */
+.cert.card {
+  position: relative;
+  padding: 12px;
+  overflow: hidden; /* prevent elements from overflowing */
+  border-radius: 12px;
+  background: var(--surface-2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--shadow);
+}
+
+/* === Wrapper for Credly and TÜV thumbnails === */
+.credly-wrap,
+.thumb {
+  aspect-ratio: 200 / 260; /* consistent height ratio */
+  display: grid;
+  place-items: stretch;
+}
+
+/* === Embedded Credly badge === */
+.credly-wrap iframe {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  border: 0;
+  border-radius: 10px;
+}
+
+/* === Verify button overlay (used for both Credly & TÜV) === */
+.overlay-verify,
+.thumb .cta {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(77, 208, 225, 0.12);
+  border: 1px solid rgba(77, 208, 225, 0.35);
+  color: #e0f7ff;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 2;
+  transition: background 0.2s ease;
+}
+
+.overlay-verify:hover,
+.thumb .cta:hover {
+  background: rgba(77, 208, 225, 0.25);
+}
+
+/* === Image overlay effect for TÜV thumbnail === */
+.thumb .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.thumb:hover .overlay {
+  opacity: 1;
+}
+
+/* === TÜV Image adjustments (prevent stretching or overflow) === */
+.thumb img {
+  max-width: 85%;
+  max-height: 85%;
+  margin: auto;
+  object-fit: contain;
+  display: block;
+}
   </style>
 </head>
 <body>
