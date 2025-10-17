@@ -280,6 +280,30 @@
   transform: translateY(-2px);
   box-shadow: 0 0 8px rgba(0,199,183,.4);
 }
+
+ .card {
+  background: rgba(77,208,225,.05);
+  border: 1px solid rgba(77,208,225,.12);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 14px rgba(0,199,183,.08);
+}
+.card h3 {
+  margin-bottom: 4px;
+  color: #cfe7f3;
+}
+.card .meta {
+  font-size: 0.9em;
+  color: #8ea5b2;
+  margin-bottom: 8px;
+}
+.card ul {
+  margin: 8px 0 0 16px;
+  color: #cfe7f3;
+  line-height: 1.4;
+}
+ 
   </style>
 </head>
 <body>
@@ -368,26 +392,48 @@
 </div>
     </section>
 
-    <section id="projects">
-      <h2>Featured Projects</h2>
-      <div class="grid projects">
-        <article class="card project" onclick="location.href='https://dimabass.github.io/incident-response/Report_on_Testing_Alerts_in_Splunk.html'">
-          <div class="meta"><span>SIEM / Detections</span></div>
-          <h3>Report on Testing Alerts in Splunk</h3>
-          <p>Practical analysis of Splunk alerts, validation of detection logic, and improvement of rule accuracy.</p>
-          <p class="muted">Splunk • Rule Tuning</p>
-          <span class="read">Read →</span>
-        </article>
+<section id="projects">
+  <h2>Featured Projects</h2>
+  <div class="grid projects">
 
-        <article class="card project" onclick="location.href='https://dimabass.github.io/incident-response/ad-attacks-ms-active-directory.html'">
-          <div class="meta"><span>Active Directory</span></div>
-          <h3>Advanced Attacks on Microsoft Active Directory</h3>
-          <p>Exploration of AD attack techniques and their detection in SIEM environments.</p>
-          <p class="muted">AD • Attack Simulation • Detection</p>
-          <span class="read">Read →</span>
-        </article>
-      </div>
-    </section>
+    <!-- Splunk Project -->
+    <article class="card project" onclick="location.href='https://dimabass.github.io/incident-response/Report_on_Testing_Alerts_in_Splunk.html'">
+      <div class="meta"><span>SIEM / Detections</span></div>
+      <h3>Report on Testing Alerts in Splunk</h3>
+      <p>Practical analysis of Splunk alerts, validation of detection logic, and fine-tuning correlation rules to improve detection accuracy.</p>
+      <p class="muted">Splunk • Rule Tuning • Detection Engineering</p>
+      <span class="read">Read →</span>
+    </article>
+
+    <!-- AD Project -->
+    <article class="card project" onclick="location.href='https://dimabass.github.io/incident-response/ad-attacks-ms-active-directory.html'">
+      <div class="meta"><span>Active Directory</span></div>
+      <h3>Advanced Attacks on Microsoft Active Directory</h3>
+      <p>Exploration of advanced AD attack chains and detection coverage in SIEM. Includes credential abuse and lateral movement scenarios.</p>
+      <p class="muted">AD • Attack Simulation • Detection Mapping</p>
+      <span class="read">Read →</span>
+    </article>
+
+    <!-- PwC Simulation -->
+    <article class="card project" onclick="location.href='https://www.theforage.com/'">
+      <div class="meta"><span>Cybersecurity Consulting</span></div>
+      <h3>PwC – Cybersecurity Consulting Simulation</h3>
+      <p>Completed a consulting scenario focused on ITGC and SDLC risk assessment for a MedTech company preparing for IPO. Delivered actionable security recommendations.</p>
+      <p class="muted">PwC • ITGC • Risk Assessment</p>
+      <span class="read">View →</span>
+    </article>
+
+    <!-- Tata Simulation -->
+    <article class="card project" onclick="location.href='https://www.theforage.com/'">
+      <div class="meta"><span>IAM / Access Control</span></div>
+      <h3>Tata – IAM Analyst Simulation</h3>
+      <p>Designed a least-privilege IAM strategy with RBAC policies and access lifecycle management, aligning with security and compliance standards.</p>
+      <p class="muted">Tata Consultancy • IAM • RBAC • Policy Design</p>
+      <span class="read">View →</span>
+    </article>
+
+  </div>
+</section>
 
     <section id="skills">
       <h2>Skills & Tools</h2>
@@ -403,23 +449,56 @@
       </div>
     </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <div class="role">
-          <strong>Nov 2025 → present — SOC Analyst (Tier 1), ****** — Remote (DE)</strong>
-          <p>Triage, alert enrichment, initial containment, and escalations. Collaboration with Tier 2 on hunts & detections.</p>
-        </div>
-        <div class="role">
-          <strong>2024 — Cybersecurity Analyst (Internship), TechNS GmbH — Oberursel (Taunus), Germany</strong>
-          <p>Alert escalation (Splunk), detection rule optimization, IOC correlation, vulnerability assessments, and incident reporting.</p>
-        </div>
-        <div class="role">
-          <strong>2023 → 2024 — Cybersecurity Engineer, EuroTech Study GmbH — Frankfurt, Germany</strong>
-          <p>Hands-on focus on Incident Response, Malware Analysis, APT tracking, SIEM, and Cloud Security.</p>
-        </div>
-      </div>
-    </section>
+   <section id="experience">
+  <h2>Experience</h2>
+
+  <div class="card">
+    <h3>Cybersecurity Analyst</h3>
+    <p class="meta">Self-employed · Jan 2024 – Present · Mannheim, Germany · Remote</p>
+    <p>
+      Hands-on Blue Team experience in simulated SOC environments (LetsDefend, CyberDefenders, BTLO). Focused on
+      SIEM, detection engineering, incident response, and digital forensics.
+    </p>
+    <ul>
+      <li>Detection & alert tuning (Splunk, Sigma, Sysmon)</li>
+      <li>IOC triage and threat hunting</li>
+      <li>Endpoint & network forensics (Volatility, Zeek, Wireshark)</li>
+      <li>Playbook creation based on MITRE ATT&CK</li>
+      <li>30+ real-world incident investigations and lab exercises</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Cyber Security Engineer (Internship)</h3>
+    <p class="meta">techNS · Nov 2024 – Dec 2024 · Germany · Remote</p>
+    <p>
+      Supported SOC operations, log analysis, and threat detection tasks for a cybersecurity provider.
+    </p>
+    <ul>
+      <li>Built and tuned correlation rules (Splunk)</li>
+      <li>Investigated brute-force & insider threats</li>
+      <li>Performed basic pentesting (SQLi, XSS) and CVE assessments</li>
+      <li>Produced reports with mitigation guidance</li>
+    </ul>
+  </div>
+</section>
+
+    <section id="education">
+  <h2>Education</h2>
+
+  <div class="card">
+    <h3>EuroTech Study GmbH</h3>
+    <p class="meta">Certification – Cybersecurity Engineer · Dec 2023 – Jan 2025</p>
+    <p>
+      Focused on SIEM, Digital Forensics, Threat Intelligence, and Incident Response with a final grade of 96/100.
+    </p>
+    <ul>
+      <li>Hands-on Red & Blue Team training</li>
+      <li>MITRE ATT&CK and SOC playbook development</li>
+      <li>Tools: Splunk, QRadar, Volatility, KAPE</li>
+    </ul>
+  </div>
+</section>
 
 <section id="certs">
   <h2>Certifications</h2>
