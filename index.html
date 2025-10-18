@@ -350,7 +350,7 @@
   padding: 16px 16px;
 }
 
-    /* === UI POLISH MINI PATCH === */
+    /* === UI POLISH MINI PATCH (Extended) === */
 
 /* Slightly narrower container — creates a more premium visual balance */
 .container {
@@ -405,6 +405,32 @@ section h2 {
 footer {
   background: linear-gradient(180deg, rgba(255, 255, 255, .015), rgba(255, 255, 255, 0));
   color: #a7bdc8;
+}
+
+/* === Project card hover improvements === */
+
+/* Smooth movement and border highlight */
+.project {
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.project:hover {
+  transform: translateY(-3px);
+  border-color: rgba(77, 208, 225, .35);
+  box-shadow: 0 8px 20px rgba(0, 199, 183, .12);
+}
+
+/* Subtle glow for the "Open →" / "Read →" link text */
+.project .read {
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+.project:hover .read {
+  color: var(--brand-2);
+  text-shadow: 0 0 8px rgba(0, 199, 183, .6);
+}
+
+/* Optional: make all project cards clickable with pointer cursor */
+.project {
+  cursor: pointer;
 }
   </style>
 
