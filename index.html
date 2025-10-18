@@ -350,6 +350,62 @@
   padding: 16px 16px;
 }
 
+    /* === UI POLISH MINI PATCH === */
+
+/* Slightly narrower container — creates a more premium visual balance */
+.container {
+  width: min(1050px, 94%);
+}
+
+/* Add a soft background gradient (left-to-right) + keep the radial highlight */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 600px at 85% -10%, rgba(77, 208, 225, .08), transparent 60%),
+    linear-gradient(90deg, rgba(77, 208, 225, .035), transparent 30%, transparent 70%, rgba(0, 199, 183, .03));
+}
+
+/* Subtle glow for the Blue Team pill badge */
+.pill {
+  box-shadow: 0 0 0 6px rgba(77, 208, 225, .06),
+              0 0 22px rgba(77, 208, 225, .18) inset;
+}
+
+/* Slightly smaller hero paragraph for better proportion with the title */
+#top .card p {
+  font-size: clamp(15px, 1.45vw, 17px);
+}
+
+/* Reduce section header spacing to make blocks feel tighter */
+section h2 {
+  margin: 0 0 10px;
+}
+
+/* Add breathing room between Experience cards */
+#experience .card {
+  margin-bottom: 22px;
+}
+
+/* Improve line spacing for Education list readability */
+#education .card ul {
+  line-height: 1.6;
+}
+
+/* Make Resume button feel more interactive on hover */
+.resume-btn a:hover {
+  background: rgba(77, 208, 225, .25);
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(0, 199, 183, .5);
+}
+
+/* Slightly lighter and more transparent footer for visual depth */
+footer {
+  background: linear-gradient(180deg, rgba(255, 255, 255, .015), rgba(255, 255, 255, 0));
+  color: #a7bdc8;
+}
   </style>
 
   <link rel="canonical" href="https://dimabass.github.io/portfolio/">
